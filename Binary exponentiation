@@ -1,0 +1,31 @@
+//winner never quit//
+//Binary exponentiation//
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+ll binexp(ll a, ll n)
+{
+	ll ret = 1;
+	while (n)
+	{
+		if (n & 1) ret *= a;
+		a *= a;
+		n >>= 1;
+	}
+	return ret;
+}
+int main()
+{
+#ifndef ONLINE_JUDGE
+	// for getting input from input.txt
+	freopen("input.txt", "r", stdin);
+	// for writing output to output.txt
+	freopen("output.txt", "w", stdout);
+#endif
+	ll a, n;
+	cin >> a >> n;
+	ll ans = binexp(a, n);
+	cout << ans << endl;
+}
+//Author:_mehedi_
+//Created: 09 February 2021 (Tuesday) at 22:34
